@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Beautiful Sofiyyah 💕</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pink: #FF1493;
+            --light-pink: #FFB6C1;
+            --hot-pink: #FF69B4;
+            --red: #DC143C;
+            --white: #FFFFFF;
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--black) 0%, #1a0515 50%, #2d0a1f 100%);
+            min-height: 100vh;
+            color: var(--white);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Floating hearts background */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart-float {
+            position: absolute;
+            font-size: 20px;
+            animation: floatUp 15s infinite ease-in;
+            opacity: 0;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        /* Sparkle effect */
+        .sparkle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkleAnim 1s ease-out forwards;
+            z-index: 9999;
+        }
+
+        @keyframes sparkleAnim {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5) rotate(180deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header with 3D effect */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header-decoration {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-10px) scale(1.1);
+            }
+        }
+
+        .name-container {
+            background: linear-gradient(135deg, rgba(255,20,147,0.2), rgba(220,20,60,0.2));
+            border: 3px solid var(--pink);
+            border-radius: 30px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 50px rgba(255,20,147,0.4);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .name-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        .main-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--white) 0%, var(--hot-pink) 50%, var(--pink) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            text-shadow: 0 0 30px rgba(255,105,180,0.5);
+            animation: colorShift 5s infinite;
+        }
+
+        @keyframes colorShift {
+            0%, 100% {
+                filter: hue-rotate(0deg);
+            }
+            50% {
+                filter: hue-rotate(20deg);
+            }
+        }
+
+        .arabic-name {
+            font-family: 'Amiri', serif;
+            font-size: 2.5em;
+            color: var(--light-pink);
+            direction: rtl;
+            margin: 15px 0;
+        }
+
+        .meaning {
+            font-size: 1.3em;
+            color: var(--white);
+            font-weight: 300;
+        }
+
+        /* Interactive tabs */
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab {
+            background: linear-gradient(135deg, var(--pink), var(--red));
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            font-weight: 500;
+            box-shadow: 0 5px 20px rgba(255,20,147,0.3);
+        }
+
+        .tab:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(255,20,147,0.6);
+            border-color: var(--white);
+        }
+
+        .tab.active {
+            background: var(--white);
+            color: var(--pink);
+            border-color: var(--pink);
+            transform: scale(1.1);
+        }
+
+        /* Content cards with flip effect */
+        .content-section {
+            display: none;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+            color: var(--black);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--pink), var(--red), var(--hot-pink));
+        }
+
+        /* Message of the day with reveal effect */
+        .message-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            font-size: 1.5em;
+            color: var(--pink);
+            font-weight: 600;
+        }
+
+        .message-icon {
+            font-size: 1.8em;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .daily-message {
+            font-size: 1.2em;
+            line-height: 2;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .verse-box {
+            background: linear-gradient(135deg, rgba(255,20,147,0.1), rgba(220,20,60,0.1));
+            border-left: 5px solid var(--pink);
+            padding: 20px;
+            border-radius: 10px;
+            font-style: italic;
+            color: var(--red);
+            margin-top: 20px;
+        }
+
+        /* Counter with animated numbers */
+        .counter-card {
+            background: linear-gradient(135deg, var(--pink) 0%, var(--red) 100%);
+            color: var(--white);
+            border-radius: 25px;
+            padding: 35px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 50px rgba(255,20,147,0.4);
+        }
+
+        .counter-label {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .counter-number {
+            font-size: 5em;
+            font-weight: 700;
+            font-family: 'Comfortaa', cursive;
+            text-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            animation: numberPop 0.5s ease-out;
+        }
+
+        @keyframes numberPop {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Interactive buttons */
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cute-button {
+            background: linear-gradient(135deg, var(--pink), var(--hot-pink));
+            color: var(--white);
+            padding: 18px 40px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255,20,147,0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cute-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cute-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .cute-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(255,20,147,0.7);
+        }
+
+        .cute-button:active {
+            transform: translateY(-2px) scale(0.98);
+        }
+
+        /* Love letter with typewriter effect */
+        .letter-container {
+            background: var(--white);
+            border-radius: 25px;
+            padding: 50px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .letter-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .letter-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5em;
+            color: var(--pink);
+            margin-bottom: 15px;
+        }
+
+        .letter-date {
+            color: var(--red);
+            font-style: italic;
+        }
+
+        .letter-body {
+            font-size: 1.15em;
+            line-height: 2;
+            color: #333;
+        }
+
+        .letter-body p {
+            margin-bottom: 25px;
+        }
+
+        .letter-signature {
+            text-align: right;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2em;
+            color: var(--pink);
+            margin-top: 40px;
+        }
+
+        /* Memory gallery */
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .memory-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+
+        .memory-card:hover {
+            transform: scale(1.05) rotate(2deg);
+            border-color: var(--pink);
+            box-shadow: 0 15px 40px rgba(255,20,147,0.4);
+        }
+
+        .memory-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .memory-title {
+            font-weight: 600;
+            color: var(--pink);
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .memory-text {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* Interactive quiz/game */
+        .quiz-option {
+            background: rgba(255,255,255,0.95);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            color: var(--black);
+        }
+
+        .quiz-option:hover {
+            border-color: var(--pink);
+            transform: translateX(10px);
+            background: var(--white);
+        }
+
+        .quiz-option.correct {
+            background: linear-gradient(135deg, rgba(34,197,94,0.2), rgba(34,197,94,0.1));
+            border-color: #22c55e;
+            animation: correctAnim 0.5s ease-out;
+        }
+
+        @keyframes correctAnim {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Reasons I love you grid */
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .reason-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,182,193,0.3));
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .reason-card:hover {
+            transform: translateY(-10px) rotate(3deg);
+            border-color: var(--pink);
+            box-shadow: 0 20px 50px rgba(255,20,147,0.4);
+        }
+
+        .reason-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--pink);
+            margin-bottom: 15px;
+        }
+
+        .reason-text {
+            font-size: 1.1em;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* Date ideas carousel */
+        .date-carousel {
+            overflow: hidden;
+            position: relative;
+            border-radius: 20px;
+            margin-top: 25px;
+        }
+
+        .date-slide {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: none;
+        }
+
+        .date-slide.active {
+            display: block;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .date-emoji {
+            font-size: 4em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .date-title {
+            font-size: 2em;
+            color: var(--pink);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .date-description {
+            font-size: 1.15em;
+            color: #333;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .carousel-btn {
+            background: var(--pink);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5em;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255,20,147,0.4);
+        }
+
+        .carousel-btn:hover {
+            transform: scale(1.2);
+            box-shadow: 0 8px 25px rgba(255,20,147,0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-name {
+                font-size: 3.5em;
+            }
+
+            .card {
+                padding: 25px;
+            }
+
+            .letter-container {
+                padding: 30px 20px;
+            }
+
+            .counter-number {
+                font-size: 3.5em;
+            }
+
+            .tabs {
+                gap: 8px;
+            }
+
+            .tab {
+                padding: 12px 20px;
+                font-size: 0.9em;
+            }
+        }
+
+        /* Click effect */
+        .click-effect {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid var(--pink);
+            pointer-events: none;
+            animation: clickRipple 0.6s ease-out;
+            z-index: 9999;
+        }
+
+        @keyframes clickRipple {
+            from {
+                transform: scale(0);
+                opacity: 1;
+            }
+            to {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating hearts background -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-decoration">🌹 💕 🌹</div>
+            <div class="name-container">
+                <div class="main-name">Sofiyyah</div>
+                <div class="arabic-name">صَفِيَّة</div>
+                <div class="meaning">My Pure Heart, My Chosen One, My Best Friend</div>
+            </div>
+        </div>
+
+        <!-- Interactive Tabs -->
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('today')">💌 Today's Love</div>
+            <div class="tab" onclick="showTab('letter')">💝 Love Letter</div>
+            <div class="tab" onclick="showTab('reasons')">💖 Why I Love You</div>
+            <div class="tab" onclick="showTab('memories')">✨ Our Memories</div>
+            <div class="tab" onclick="showTab('dates')">🎯 Date Ideas</div>
+            <div class="tab" onclick="showTab('quiz')">🎮 Love Quiz</div>
+        </div>
+
+        <!-- Today's Love Section -->
+        <div id="today" class="content-section active">
+            <!-- Counter -->
+            <div class="counter-card">
+                <div class="counter-label">💕 Days Since I Fell for You 💕</div>
+                <div class="counter-number" id="dayCounter">1</div>
+                <div style="margin-top: 15px; font-size: 1.1em;">And counting... forever in sha Allah!</div>
+            </div>
+
+            <!-- Daily Message -->
+            <div class="card">
+                <div class="message-header">
+                    <span class="message-icon">💌</span>
+                    <span>Your Daily Love Message</span>
+                </div>
+                <div class="daily-message" id="dailyMessage"></div>
+                <div class="verse-box" id="verseBox"></div>
+            </div>
+
+            <div class="button-group">
+                <button class="cute-button" onclick="generateCompliment()">
+                    ✨ Get a Random Compliment
+                </button>
+                <button class="cute-button" onclick="sendVirtualHug()">
+                    🤗 Send Virtual Hug
+                </button>
+            </div>
+        </div>
+
+        <!-- Love Letter Section -->
+        <div id="letter" class="content-section">
+            <div class="letter-container">
+                <div class="letter-header">
+                    <div class="letter-title">To My Beautiful Sofiyyah</div>
+                    <div class="letter-date" id="letterDate"></div>
+                </div>
+                <div class="letter-body">
+                    <p>My dearest Sofiyyah, my everything,</p>
+                    
+                    <p>As-salamu alaykum wa rahmatullahi wa barakatuh my love! ❤️</p>
+                    
+                    <p>Baby, I just want you to know that you mean absolutely EVERYTHING to me. Like, I'm not even exaggerating - you're literally the best thing that's ever happened to me after Islam. When I wake up, you're my first thought. When I pray, you're in every dua. When I smile, it's because of you.</p>
+                    
+                    <p>I know we're both students right now and things aren't always easy. We're juggling assignments, stressing about exams, worrying about money... but honestly? I wouldn't want to go through any of this with anyone else. You make even the hard days feel lighter. When we study together, when we laugh about random stuff, when you make me tea and I make you smile - those are the moments I live for.</p>
+                    
+                    <p>Your name, Sofiyyah (صَفِيَّة), means "the pure one, the chosen one, the best friend" - and SubhanAllah, you ARE all of that. You're the purity that makes my heart feel clean. You're the person Allah chose specifically for ME (can you believe that?! 😭💕). And you're genuinely my best friend in the whole world.</p>
+                    
+                    <p>The Prophet ﷺ said the best among us are those who are best to their wives. Baby, I promise I'll keep trying to be the best for you. Some days I might fail, some days I might forget to show you how much I care, but I promise my love for you never wavers. Not even for a second.</p>
+                    
+                    <p>This website? It's not much - I know I can't afford fancy gifts or expensive dates right now. But I spent hours making this for you because I wanted you to have something that shows you how much I care. Every single day when you visit this, I want you to remember: you are SO loved, SO appreciated, SO cherished.</p>
+                    
+                    <p>One day in sha Allah, when we've graduated and I have a stable job, I'm going to give you the world. We'll have our own cozy home, we'll travel together, we'll build the most beautiful family. But even then, the most precious thing won't be the house or the trips - it'll still be YOU. Just you being you. That's all I need Alhamdulillah.</p>
+                    
+                    <p>When things get tough (and they will, life's like that), I want you to come back to this letter and remember: We have each other, we have Allah, and we have a love that's blessed and pure. That's literally all we need to conquer anything.</p>
+                    
+                    <p>I make dua that Allah keeps you safe, keeps you happy, keeps you healthy. I pray He blesses our marriage with so much love and mercy that people look at us and say "MashAllah." I pray He gives us righteous children who'll make us proud and be our investment for Jannah. And most importantly, I pray we get to hold hands as we enter Jannah together. Ameen ya Rabb! 🤲</p>
+                    
+                    <p>You know what's crazy? Allah created millions of people in this world, but He chose YOU for me. Out of everyone, YOU. That's not luck, that's divine planning. And I thank Him every single day for that.</p>
+                    
+                    <p>I love you for the sake of Allah. I love you when you're in your hijab ready to go out. I love you when you're in your comfy clothes at home. I love you when you're laughing at my jokes. I love you when you're stressed about deadlines. I love you when you're praying. I love you when you're being silly. I just... love you. All of you. Always.</p>
+                    
+                    <p>Thank you for being patient with me. Thank you for believing in us. Thank you for choosing me every day. Thank you for being my peace in this chaotic world.</p>
+                    
+                    <div class="letter-signature">
+                        Forever yours (in this dunya and akhirah),<br>
+                        Your husband who loves you endlessly 💕<br>
+                        🌹 Always and forever 🌹
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why I Love You Section -->
+        <div id="reasons" class="content-section">
+            <div class="card">
+                <div class="message-header">
+                    <span class="message-icon">💖</span>
+                    <span>Reasons Why I'm Crazy About You</span>
+                </div>
+                <p style="text-align: center; margin-bottom: 30px; font-size: 1.1em; color: #666;">
+                    Just a few of the MILLION reasons you're amazing...
+                </p>
+                <div class="reasons-grid">
+                    <div class="reason-card">
+                        <div class="reason-number">01</div>
+                        <div class="reason-text">
+                            The way you pray with such sincerity - it makes me fall in love with you AND want to be a better Muslim at the same time 🤲
+                        </div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">02</div>
+                        <div class="reason-text">
+                            Your laugh! Girl, when you really laugh, like REALLY laugh, my whole world lights up. It's literally my favorite sound 😊
+                        </div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">03</div>
+                        <div class="reason-text">
+                            How patient you are with me, especially when I'm being stubborn or stressed. You calm me down without even trying 💆‍♂️
+                        </div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">04</div>
+                        <div class="reason-text">
+                            The way you care about others - you have such a kind heart MashAllah. You see someone struggling and you immediately want to help 💝
+                        </div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">05</div>
+                        <div class="reason-text">
+                            Your smile. Wallahi I could be having the WORST day and one smile from you makes everything better instantly ✨
+                        </div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">06</div>
+                        <div class="reason-text">
+                            How you support my dreams while keeping me grounded. You believe in me but also remind me to rely on Allah first 🎯
+                        </div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">07</div>
+                        <div class="reason-text">
+                            The little things - how you remember what I like, how you check on me when I'm busy, how you make me feel seen and heard 👀
+                        </div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">08</div>
+                        <div class="reason-text">
+                            Your strength! You handle so much with such grace. Studies, life, everything - and you still make time for us. Amazing! 💪
+                        </div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">09</div>
+                        <div class="reason-text">
+                            How beautiful you are - and I don't just mean physically (though MashAllah 😍). Your soul, your character, your energy - everything is beautiful
+                        </div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">10</div>
+                        <div class="reason-text">
+                            You're my best friend! I can tell you anything, be myself completely, laugh until we cry - that's real love right there 🫂
+                        </div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">11</div>
+                        <div class="reason-text">
+                            Your ambition and drive - you're not just sitting around waiting for life to happen. You're out here MAKING it happen! 🚀
+                        </div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">12</div>
+                        <div class="reason-text">
+                            How you make me want to be better - a better Muslim, better husband, better person. You inspire me every single day 🌟
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Memories Section -->
+        <div id="memories" class="content-section">
+            <div class="card">
+                <div class="message-header">
+                    <span class="message-icon">✨</span>
+                    <span>Our Beautiful Moments Together</span>
+                </div>
+                <p style="text-align: center; margin-bottom: 30px; font-size: 1.1em; color: #666;">
+                    Every moment with you becomes a precious memory...
+                </p>
+                <div class="memory-grid">
+                    <div class="memory-card" onclick="showMemoryDetail(1)">
+                        <div class="memory-icon">🌙</div>
+                        <div class="memory-title">Late Night Talks</div>
+                        <div class="memory-text">
+                            Those random 2am conversations about life, dreams, and everything in between
+                        </div>
+                    </div>
+                    <div class="memory-card" onclick="showMemoryDetail(2)">
+                        <div class="memory-icon">📚</div>
+                        <div class="memory-title">Study Sessions</div>
+                        <div class="memory-text">
+                            When studying together somehow makes even boring assignments fun
+                        </div>
+                    </div>
+                    <div class="memory-card" onclick="showMemoryDetail(3)">
+                        <div class="memory-icon">🤲</div>
+                        <div class="memory-title">Praying Together</div>
+                        <div class="memory-text">
+                            The peace of making dua side by side, knowing we're building our akhirah together
+                        </div>
+                    </div>
+                    <div class="memory-card" onclick="showMemoryDetail(4)">
+                        <div class="memory-icon">😂</div>
+                        <div class="memory-title">Inside Jokes</div>
+                        <div class="memory-text">
+                            All those silly jokes that only we understand and make us laugh uncontrollably
+                        </div>
+                    </div>
+                    <div class="memory-card" onclick="showMemoryDetail(5)">
+                        <div class="memory-icon">🍜</div>
+                        <div class="memory-title">Simple Meals</div>
+                        <div class="memory-text">
+                            When we're broke but happy, sharing simple food and making it feel like a feast
+                        </div>
+                    </div>
+                    <div class="memory-card" onclick="showMemoryDetail(6)">
+                        <div class="memory-icon">🎮</div>
+                        <div class="memory-title">Fun Times</div>
+                        <div class="memory-text">
+                            Just being silly together, playing around, and enjoying each other's company
+                        </div>
+                    </div>
+                    <div class="memory-card" onclick="showMemoryDetail(7)">
+                        <div class="memory-icon">💭</div>
+                        <div class="memory-title">Dream Planning</div>
+                        <div class="memory-text">
+                            Talking about our future home, kids, life together - building castles in the air
+                        </div>
+                    </div>
+                    <div class="memory-card" onclick="showMemoryDetail(8)">
+                        <div class="memory-icon">🌅</div>
+                        <div class="memory-title">Every Day Moments</div>
+                        <div class="memory-text">
+                            The ordinary days that are extraordinary just because we're together
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Date Ideas Section -->
+        <div id="dates" class="content-section">
+            <div class="card">
+                <div class="message-header">
+                    <span class="message-icon">🎯</span>
+                    <span>Cute Date Ideas (That Won't Break the Bank!)</span>
+                </div>
+                <p style="text-align: center; margin-bottom: 30px; font-size: 1.1em; color: #666;">
+                    Because we don't need money to make amazing memories together 💕
+                </p>
+                <div class="date-carousel">
+                    <div class="date-slide active">
+                        <div class="date-emoji">🌙</div>
+                        <div class="date-title">Stargazing & Deep Talks</div>
+                        <div class="date-description">
+                            Let's find a quiet spot, look at Allah's beautiful creation above us, and just talk about life, our dreams, and how grateful we are for each other. Costs nothing but creates priceless memories!
+                        </div>
+                    </div>
+                    <div class="date-slide">
+                        <div class="date-emoji">🍜</div>
+                        <div class="date-title">Cook Together Night</div>
+                        <div class="date-description">
+                            We can make something simple together - maybe pasta or a local dish. Put on some nasheeds, laugh when we mess up, and enjoy creating something together. It's about the company, not the meal!
+                        </div>
+                    </div>
+                    <div class="date-slide">
+                        <div class="date-emoji">🚶‍♀️</div>
+                        <div class="date-title">Evening Walk & Ice Cream</div>
+                        <div class="date-description">
+                            A simple walk when the weather's nice, maybe grab some affordable ice cream, and just enjoy each other's presence. We can talk, laugh, and make any street feel romantic!
+                        </div>
+                    </div>
+                    <div class="date-slide">
+                        <div class="date-emoji">🎨</div>
+                        <div class="date-title">Creative Night In</div>
+                        <div class="date-description">
+                            Let's try something creative together - could be drawing, crafts, or even just decorating our space with what we have. It's about doing something together and laughing at our attempts!
+                        </div>
+                    </div>
+                    <div class="date-slide">
+                        <div class="date-emoji">📚</div>
+                        <div class="date-title">Reading & Discussion Time</div>
+                        <div class="date-description">
+                            We can pick a book (Islamic or otherwise), read together or separately, then discuss it over tea. Intellectual connection is attractive, and this costs almost nothing!
+                        </div>
+                    </div>
+                    <div class="date-slide">
+                        <div class="date-emoji">☕</div>
+                        <div class="date-title">Coffee Shop Date</div>
+                        <div class="date-description">
+                            Just one drink each at a simple coffee shop, and we can sit for hours talking, people-watching, and enjoying the ambiance. It's about US, not the place!
+                        </div>
+                    </div>
+                    <div class="date-slide">
+                        <div class="date-emoji">🎮</div>
+                        <div class="date-title">Game Night</div>
+                        <div class="date-description">
+                            Whether it's board games, card games, or even phone games together - let's just have fun and be competitive (but cute about it lol). Winner gets extra cuddles? 😊
+                        </div>
+                    </div>
+                    <div class="date-slide">
+                        <div class="date-emoji">🌳</div>
+                        <div class="date-title">Park Picnic</div>
+                        <div class="date-description">
+                            Pack some simple snacks, find a nice spot in a park, and just enjoy nature together. We can talk, relax, or just sit in comfortable silence. Pure bliss!
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn" onclick="previousDate()">◀</button>
+                    <button class="carousel-btn" onclick="nextDate()">▶</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div id="quiz" class="content-section">
+            <div class="card">
+                <div class="message-header">
+                    <span class="message-icon">🎮</span>
+                    <span>How Well Do You Know Your Husband?</span>
+                </div>
+                <p style="text-align: center; margin-bottom: 30px; font-size: 1.1em; color: #666;">
+                    Let's see if you've been paying attention! 😏
+                </p>
+                
+                <div id="quizContainer">
+                    <div class="quiz-question" style="margin-bottom: 30px; font-size: 1.2em; font-weight: 600; color: var(--pink);">
+                        Question 1: What's the first thing I think about when I wake up?
+                    </div>
+                    <div class="quiz-option" onclick="checkAnswer(this, false)">
+                        Checking my phone
+                    </div>
+                    <div class="quiz-option" onclick="checkAnswer(this, true)">
+                        You! Always you ❤️
+                    </div>
+                    <div class="quiz-option" onclick="checkAnswer(this, false)">
+                        What's for breakfast
+                    </div>
+                    <div class="quiz-option" onclick="checkAnswer(this, false)">
+                        My assignments due
+                    </div>
+                </div>
+
+                <div class="button-group" style="margin-top: 30px;">
+                    <button class="cute-button" onclick="nextQuestion()">
+                        Next Question ➡️
+                    </button>
+                    <button class="cute-button" onclick="restartQuiz()">
+                        Start Over 🔄
+                    </button>
+                </div>
+
+                <div id="quizScore" style="text-align: center; margin-top: 25px; font-size: 1.3em; color: var(--pink); font-weight: 600;"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Daily messages - MORE NATURAL AND HUMAN
+        const dailyMessages = [
+            {
+                text: "Good morning my love! ☀️ I hope you slept well. Just wanted to remind you that you're literally the most amazing person in my life. Today's going to be great because you're in it! Don't forget to eat breakfast okay? Love you so much! 💕",
+                verse: "\"And He placed between you affection and mercy\" - Qur'an 30:21"
+            },
+            {
+                text: "Hey beautiful! 😊 Just thinking about you and couldn't help but smile. You know that thing you do when you're concentrating? Like when you bite your lip a little? Yeah, that's adorable lol. Hope your day is as amazing as you are!",
+                verse: "\"The best of you are those who are best to their wives\" - Prophet Muhammad ﷺ"
+            },
+            {
+                text: "Assalamu alaikum my dear! 🌙 Remember when we stayed up late just talking about everything and nothing? Those are my favorite moments. Not because of what we talk about, but because it's YOU I'm talking to. You make everything better, wallahi.",
+                verse: "\"Our Lord, grant us from our spouses comfort to our eyes\" - Qur'an 25:74"
+            },
+            {
+                text: "Baby! Guess what? I saw something today that reminded me of you... actually, everything reminds me of you lol 😅 You're literally ALWAYS on my mind. Is this what people mean when they say love is distracting? Because I can't focus on anything but you!",
+                verse: "\"When My servants ask you about Me, I am indeed near\" - Qur'an 2:186"
+            },
+            {
+                text: "You know what I love about us? We can be completely silly together and then have deep conversations about life and deen. Like, one minute we're laughing about something random, next minute we're talking about Jannah. That's real connection right there! ❤️",
+                verse: "\"Help one another in righteousness and piety\" - Qur'an 5:2"
+            },
+            {
+                text: "I'm not gonna lie, sometimes I just stare at you and think 'SubhanAllah, she's MY wife' like... Allah really blessed me with YOU. Out of everyone in the world, I got YOU. How did I get this lucky? Alhamdulillah doesn't even feel enough! 🤲",
+                verse: "\"If you are grateful, I will surely increase you\" - Qur'an 14:7"
+            },
+            {
+                text: "Hey you! Yes YOU, the most beautiful woman in my life 😍 Just wanted to say thank you for being patient with me, especially when I'm stressed about school. You always know how to calm me down. I appreciate you SO much baby, never forget that! 💝",
+                verse: "\"Indeed, the patient will be given their reward without account\" - Qur'an 39:10"
+            },
+            {
+                text: "Random thought of the day: Remember when we first met and I was so nervous I could barely speak properly? 😂 Look at us now! You've become my safe space, my comfort, my home. From nervous strangers to soulmates - SubhanAllah, Allah's plan is perfect! 🌹",
+                verse: "\"He created for you mates that you may find tranquility\" - Qur'an 30:21"
+            },
+            {
+                text: "Good morning sunshine! ☀️ I know we're both broke students right now, but honestly? I wouldn't trade this for anything. These simple moments with you - studying together, sharing cheap meals, making each other laugh - these are the memories we'll treasure forever! 💕",
+                verse: "\"Indeed, with hardship comes ease\" - Qur'an 94:6"
+            },
+            {
+                text: "You know what I realized? Every time I make dua, you're in it. Every. Single. Time. I pray for your happiness, your success, your health, your dunya and akhirah. That's how important you are to me. You're not just my wife, you're my dua. ❤️🤲",
+                verse: "\"Call upon Me; I will respond to you\" - Qur'an 40:60"
+            },
+            {
+                text: "Hey love! 💕 Just a reminder that you're doing AMAZING. I know life's overwhelming sometimes - assignments, exams, everything - but look at you handling it all! I'm so proud of you baby. Keep going, you've got this! And you've got ME supporting you always! 💪",
+                verse: "\"Allah does not burden a soul beyond what it can bear\" - Qur'an 2:286"
+            },
+            {
+                text: "Can we talk about how cute you are when you pray? Like MashAllah, the way you focus and how peaceful you look... it makes me fall in love all over again. You make me want to be better, do better, BE better. That's what a real partner does. 🤲✨",
+                verse: "\"Indeed, prayer prohibits immorality and wrongdoing\" - Qur'an 29:45"
+            },
+            {
+                text: "I was thinking... years from now when we have our own place and maybe kids running around in sha Allah, we're gonna look back at these student days and smile. We'll remember how we struggled but laughed through it all. Because we had each other. That's all we needed! 🏡💕",
+                verse: "\"Wealth and children are the adornment of worldly life\" - Qur'an 18:46"
+            },
+            {
+                text: "Your smile should be illegal wallahi 😭💕 Like seriously, the way your whole face lights up when you're genuinely happy? That's my favorite view in the entire world. I'd do anything to see that smile every day for the rest of my life. You're my happiness baby! 😊",
+                verse: "\"So by mercy from Allah, you were lenient with them\" - Qur'an 3:159"
+            },
+            {
+                text: "You know those random moments when we're just sitting together, not really doing anything, just... existing in each other's presence? Those are my favorite. No pressure, no performance, just US. That's real comfort right there. That's what home feels like. 🫂",
+                verse: "\"And He gave you from all you asked of Him\" - Qur'an 14:34"
+            },
+            {
+                text: "Fun fact: Every time you text me, my heart does this little jump thing lol 😅 Like I could be in the middle of the most boring lecture and then I see your name pop up and suddenly everything's better. You have this superpower of making my day instantly better! ✨",
+                verse: "\"Remember Me; I will remember you\" - Qur'an 2:152"
+            },
+            {
+                text: "I need you to know something... even when we disagree or have those little arguments (because we're human and that happens), it NEVER makes me love you less. Not even a tiny bit. If anything, working through stuff together just makes us stronger. We're a team! 💪❤️",
+                verse: "\"And they who restrain anger and pardon people\" - Qur'an 3:134"
+            },
+            {
+                text: "Sometimes I catch myself just... watching you. Doing whatever you're doing - studying, cooking, just chilling. And I think 'MashAllah, this woman is MINE'. Like the whole universe aligned to bring us together. That's not luck, that's destiny! 🌟",
+                verse: "\"And you do not will except that Allah wills\" - Qur'an 76:30"
+            },
+            {
+                text: "Late night thoughts: I can't wait for the day when we don't have to worry about money, when I can spoil you the way you deserve, when I can give you everything you want. But even if that day takes time to come - I'm happy right now, because I have YOU. 💝",
+                verse: "\"Whoever puts their trust in Allah, then He is sufficient\" - Qur'an 65:3"
+            },
+            {
+                text: "Good morning love! ☀️ Here's your daily reminder that you're: Smart ✅ Beautiful ✅ Kind ✅ Amazing ✅ Loved beyond measure ✅ My whole world ✅ The best thing ever ✅ And so much more! Don't let anyone (including yourself) tell you otherwise! 💕",
+                verse: "\"Indeed, the most noble of you is the most righteous\" - Qur'an 49:13"
+            }
+        ];
+
+        // More quiz questions
+        const quizQuestions = [
+            {
+                question: "What's the first thing I think about when I wake up?",
+                options: ["Checking my phone", "You! Always you ❤️", "What's for breakfast", "My assignments due"],
+                correct: 1
+            },
+            {
+                question: "What do I love most about you?",
+                options: ["Your cooking skills", "Everything! But especially your kind heart and beautiful soul 💕", "Your sense of humor", "How organized you are"],
+                correct: 1
+            },
+            {
+                question: "What's my favorite thing to do with you?",
+                options: ["Honestly, just being near you. Everything's fun when you're around! 😊", "Going out to eat", "Watching movies", "Shopping"],
+                correct: 0
+            },
+            {
+                question: "How do I feel about our future together?",
+                options: ["Worried about it", "Not sure yet", "Excited but nervous", "SO excited! Can't wait to build everything with you in sha Allah! 🏡"],
+                correct: 3
+            },
+            {
+                question: "What makes me smile the most?",
+                options: ["Good grades", "Free food", "Your smile and laugh - they literally light up my world! ✨", "Funny videos"],
+                correct: 2
+            }
+        ];
+
+        let currentQuiz = 0;
+        let quizScore = 0;
+        let currentDateSlide = 0;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDayCounter();
+            displayDailyMessage();
+            updateLetterDate();
+            createFloatingHearts();
+            addClickEffect();
+            addSparkleEffect();
+        });
+
+        // Day counter
+        function updateDayCounter() {
+            const startDate = new Date('2026-02-14');
+            const today = new Date();
+            const diffTime = Math.abs(today - startDate);
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
+            
+            document.getElementById('dayCounter').textContent = diffDays;
+            
+            // Animate the number
+            setTimeout(() => {
+                document.getElementById('dayCounter').style.animation = 'none';
+                setTimeout(() => {
+                    document.getElementById('dayCounter').style.animation = 'numberPop 0.5s ease-out';
+                }, 10);
+            }, 100);
+        }
+
+        // Display daily message
+        function displayDailyMessage() {
+            const startDate = new Date('2026-02-14');
+            const today = new Date();
+            const diffTime = Math.abs(today - startDate);
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            const messageIndex = diffDays % dailyMessages.length;
+            
+            const message = dailyMessages[messageIndex];
+            document.getElementById('dailyMessage').textContent = message.text;
+            document.getElementById('verseBox').textContent = message.verse;
+        }
+
+        // Update letter date
+        function updateLetterDate() {
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const today = new Date().toLocaleDateString('en-US', options);
+            document.getElementById('letterDate').textContent = today;
+        }
+
+        // Tab switching
+        function showTab(tabName) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active to clicked tab
+            event.target.classList.add('active');
+            
+            // Add sparkle effect
+            createSparkles(event.clientX, event.clientY);
+        }
+
+        // Generate random compliment
+        function generateCompliment() {
+            const compliments = [
+                "You're literally the most beautiful person I know, inside and out! 😍",
+                "Your smile could light up the darkest room, wallahi! ✨",
+                "I love how passionate you are about everything you do! 💪",
+                "You make me want to be a better person every day! 🌟",
+                "Your kindness and patience amaze me constantly! 💝",
+                "The way you care for others shows such a beautiful heart! ❤️",
+                "I'm so grateful Allah chose YOU for me! 🤲",
+                "Your strength inspires me more than you know! 💪",
+                "Every day with you feels like a blessing! Alhamdulillah! 🌹",
+                "You're not just my wife, you're my best friend! 🫂"
+            ];
+            
+            const randomCompliment = compliments[Math.floor(Math.random() * compliments.length)];
+            
+            alert(randomCompliment);
+            createSparkles(event.clientX, event.clientY);
+        }
+
+        // Send virtual hug
+        function sendVirtualHug() {
+            const hugMessages = [
+                "🤗 *Sending the biggest, warmest hug ever!* 🤗\n\nI wish I could hug you for real right now!",
+                "🫂 *Virtual hug incoming!* 🫂\n\nThis hug is filled with all my love for you!",
+                "💕 *Hugging you tight through the screen!* 💕\n\nCan't wait to give you a real one!",
+                "🤗 *Big bear hug for my beautiful wife!* 🤗\n\nYou deserve all the hugs in the world!",
+                "🫂 *Wrapping you in love and warmth!* 🫂\n\nEven from far, my heart is always with you!"
+            ];
+            
+            const randomHug = hugMessages[Math.floor(Math.random() * hugMessages.length)];
+            alert(randomHug);
+            createHeartExplosion(event.clientX, event.clientY);
+        }
+
+        // Memory detail
+        function showMemoryDetail(memoryId) {
+            const memories = {
+                1: "Those late-night talks are honestly my favorite. Just us, talking about everything - our dreams, fears, hopes, random thoughts. No judgment, just pure connection. That's when I feel closest to you. ❤️",
+                2: "Who knew studying could be romantic? 😅 But seriously, having you next to me makes even the boring subjects bearable. Plus those study break conversations and laughs? Best part of my day!",
+                3: "Praying together is special in a way I can't even explain. It's like we're reminding each other and building our akhirah side by side. That's real partnership right there. 🤲",
+                4: "Our inside jokes are literally THE BEST! 😂 No one else gets them and that makes them even more special. It's like our own little world that only we share!",
+                5: "The fact that we can be happy with simple meals shows we don't need much to be content. Just good food (even if cheap) and great company (YOU) = perfection! 🍜",
+                6: "Being silly with you without fear of judgment is liberating! We can just be our authentic, goofy selves. That's what makes us US! 😄",
+                7: "I LOVE planning our future with you! From what our home will look like to what we'll name our kids in sha Allah. These dreams keep me motivated to work hard! 💭",
+                8: "It's the everyday moments I cherish most. Waking up, random texts, seeing you after a long day - these 'ordinary' moments are extraordinary because they're with YOU! 💕"
+            };
+            
+            alert(memories[memoryId]);
+            createSparkles(event.clientX, event.clientY);
+        }
+
+        // Date carousel
+        function nextDate() {
+            const slides = document.querySelectorAll('.date-slide');
+            slides[currentDateSlide].classList.remove('active');
+            currentDateSlide = (currentDateSlide + 1) % slides.length;
+            slides[currentDateSlide].classList.add('active');
+        }
+
+        function previousDate() {
+            const slides = document.querySelectorAll('.date-slide');
+            slides[currentDateSlide].classList.remove('active');
+            currentDateSlide = (currentDateSlide - 1 + slides.length) % slides.length;
+            slides[currentDateSlide].classList.add('active');
+        }
+
+        // Quiz functions
+        function checkAnswer(element, isCorrect) {
+            if (element.classList.contains('correct')) return;
+            
+            if (isCorrect) {
+                element.classList.add('correct');
+                quizScore++;
+                createHeartExplosion(element.getBoundingClientRect().left + element.offsetWidth/2, 
+                                   element.getBoundingClientRect().top + element.offsetHeight/2);
+            } else {
+                element.style.opacity = '0.5';
+            }
+            
+            // Disable all options after answer
+            document.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.style.pointerEvents = 'none';
+            });
+        }
+
+        function nextQuestion() {
+            currentQuiz = (currentQuiz + 1) % quizQuestions.length;
+            loadQuestion();
+            updateScore();
+        }
+
+        function loadQuestion() {
+            const question = quizQuestions[currentQuiz];
+            const container = document.getElementById('quizContainer');
+            
+            container.innerHTML = `
+                <div class="quiz-question" style="margin-bottom: 30px; font-size: 1.2em; font-weight: 600; color: var(--pink);">
+                    Question ${currentQuiz + 1}: ${question.question}
+                </div>
+            `;
+            
+            question.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'quiz-option';
+                optionDiv.textContent = option;
+                optionDiv.onclick = function() {
+                    checkAnswer(this, index === question.correct);
+                };
+                container.appendChild(optionDiv);
+            });
+        }
+
+        function restartQuiz() {
+            currentQuiz = 0;
+            quizScore = 0;
+            loadQuestion();
+            updateScore();
+        }
+
+        function updateScore() {
+            document.getElementById('quizScore').textContent = 
+                `Score: ${quizScore}/${quizQuestions.length} - You know me so well! 💕`;
+        }
+
+        // Floating hearts
+        function createFloatingHearts() {
+            const hearts = ['❤️', '💕', '💖', '💝', '💗', '🌹', '💘'];
+            const container = document.getElementById('floatingHearts');
+            
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'heart-float';
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDuration = (Math.random() * 5 + 10) + 's';
+                heart.style.animationDelay = Math.random() * 2 + 's';
+                container.appendChild(heart);
+                
+                setTimeout(() => heart.remove(), 15000);
+            }, 800);
+        }
+
+        // Click effect
+        function addClickEffect() {
+            document.addEventListener('click', function(e) {
+                const ripple = document.createElement('div');
+                ripple.className = 'click-effect';
+                ripple.style.left = e.clientX - 50 + 'px';
+                ripple.style.top = e.clientY - 50 + 'px';
+                document.body.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        }
+
+        // Sparkle effect
+        function addSparkleEffect() {
+            document.addEventListener('mousemove', function(e) {
+                if (Math.random() > 0.95) {
+                    createSparkles(e.clientX, e.clientY);
+                }
+            });
+        }
+
+        function createSparkles(x, y) {
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    const sparkle = document.createElement('div');
+                    sparkle.className = 'sparkle';
+                    sparkle.style.left = (x + (Math.random() - 0.5) * 50) + 'px';
+                    sparkle.style.top = (y + (Math.random() - 0.5) * 50) + 'px';
+                    document.body.appendChild(sparkle);
+                    
+                    setTimeout(() => sparkle.remove(), 1000);
+                }, i * 50);
+            }
+        }
+
+        // Heart explosion
+        function createHeartExplosion(x, y) {
+            const hearts = ['❤️', '💕', '💖', '💝', '💗'];
+            for (let i = 0; i < 12; i++) {
+                const heart = document.createElement('div');
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.position = 'fixed';
+                heart.style.left = x + 'px';
+                heart.style.top = y + 'px';
+                heart.style.fontSize = '24px';
+                heart.style.pointerEvents = 'none';
+                heart.style.zIndex = '9999';
+                
+                const angle = (Math.PI * 2 * i) / 12;
+                const velocity = 100 + Math.random() * 100;
+                const tx = Math.cos(angle) * velocity;
+                const ty = Math.sin(angle) * velocity;
+                
+                heart.style.animation = `explode 1s ease-out forwards`;
+                heart.style.transform = `translate(${tx}px, ${ty}px)`;
+                
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 1000);
+            }
+        }
+
+        // Add CSS for explosion animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes explode {
+                0% {
+                    opacity: 1;
+                    transform: translate(0, 0) scale(1);
+                }
+                100% {
+                    opacity: 0;
+                    transform: translate(var(--tx), var(--ty)) scale(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
